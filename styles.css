@@ -1,56 +1,56 @@
 /* Fonts */
 @font-face {
     font-family: 'SST';
-    src: url('Font/SST-ROMAN.OTF') format('opentype');
+    src: url('font/sst-roman.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SST';
-    src: url('Font/SST-MEDIUM.OTF') format('opentype');
+    src: url('font/sst-medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SST';
-    src: url('Font/SST-BOLD.OTF') format('opentype');
+    src: url('font/sst-bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SST';
-    src: url('Font/SST-LIGHT.OTF') format('opentype');
+    src: url('font/sst-light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Sukhumvit Set';
-    src: url('Font/SukhumvitSet.ttc') format('truetype');
+    src: url('font/sukhumvitset.ttc') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Sukhumvit Set';
-    src: url('Font/SukhumvitSet-Medium.ttf') format('truetype');
+    src: url('font/sukhumvitset-medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Sukhumvit Set';
-    src: url('Font/SukhumvitSet-SemiBold.ttf') format('truetype');
+    src: url('font/sukhumvitset-semibold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Sukhumvit Set';
-    src: url('Font/SukhumvitSet-Bold.ttf') format('truetype');
+    src: url('font/sukhumvitset-bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
