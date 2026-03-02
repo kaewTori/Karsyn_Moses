@@ -311,7 +311,7 @@ body {
 .description {
     padding: 20px 20px 0px 20px;
     text-align: center;
-    background: #f8f8f8;
+    /* background: #f8f8f8; */
     max-width: 100%;
 }
 
@@ -672,7 +672,7 @@ body {
 /* Centers */
 .centers {
     padding: 30px 50px;
-    background: #f8f8f8;
+    /* background: #f8f8f8; */
 }
 
 .centers h2 {
@@ -1913,3 +1913,4 @@ body {
     }
 
 }
+
