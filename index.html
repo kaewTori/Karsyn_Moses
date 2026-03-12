@@ -37,6 +37,13 @@
         </div>
     </section>
 
+    <!-- ===================== PRODUCT NAV ===================== -->
+    <nav class="product-nav">
+        <a href="#product-camera" onclick="navTo(event,'product-camera')"><img src="images/menu_1.png" alt="กล้องและเลนส์"></a>
+        <a href="#product-audio" onclick="navTo(event,'product-audio')"><img src="images/menu_2.png" alt="หูฟัง"></a>
+        <a href="#product-mobile" onclick="navTo(event,'product-mobile')"><img src="images/menu_3.png" alt="มือถือ"></a>
+    </nav>
+
     <!-- ===================== COVERAGE ===================== -->
     <section class="coverage">
         <h2>คุ้มครองนานถึง 3 ปี</h2>
@@ -102,7 +109,7 @@
     </section>
 
     <!-- ===================== PRODUCT: CAMERA ===================== -->
-    <section class="product">
+    <section id="product-camera" class="product">
         <div class="product-row">
             <img src="images/groupcamera.png" alt="กล้อง Sony">
             <div class="product-row-content">
@@ -188,7 +195,7 @@
             </div>
 
             <!-- Case Study -->
-            <div class="case-title">Case Study</div>
+            <div class="case-title">กรณีตัวอย่างการซ่อม</div>
             <div class="case-study-content">
                 <div class="case-card">
                     <img src="images/case_study_01.png" alt="ILCE-7RM2">
@@ -327,7 +334,7 @@
     </section>
 
     <!-- ===================== PRODUCT: AUDIO ===================== -->
-    <section class="product">
+    <section id="product-audio" class="product">
         <h2>สินค้าเครื่องเสียงเฉพาะรุ่นที่ร่วมรายการ<br>ขยายประกันคุ้มครองสูงสุด 27 เดือน</h2>
         <div class="product-row">
             <img src="images/groupheadphone.png" alt="หูฟัง Sony">
@@ -362,7 +369,7 @@
     </section>
 
     <!-- ===================== PRODUCT: MOBILE ===================== -->
-    <section class="product">
+    <section id="product-mobile" class="product">
         <h2>สินค้ามือถือเฉพาะรุ่นที่ร่วมรายการ<br>ขยายประกันคุ้มครองสูงสุด 27 เดือน</h2>
         <div class="product-row">
             <img src="images/groupphone.png" alt="มือถือ Sony">
@@ -580,6 +587,50 @@
             const isOpen  = content.classList.toggle('show');
             button.textContent = isOpen ? 'ซ่อน Case Study' : 'Case Study';
         }
+
+        function navTo(e, sectionId) {
+            e.preventDefault();
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            // Open product-details if not already open
+            const details = section.querySelector('.product-details');
+            const btn     = section.querySelector('.product-row-content .btn');
+            if (details && !details.classList.contains('show')) {
+                details.classList.add('show');
+                if (btn) btn.textContent = 'ซ่อนรายละเอียด';
+            }
+
+            // Smooth scroll after a short delay to let the details expand
+            setTimeout(() => {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+        }
+    </script>
+
+    <!-- BACK TO TOP -->
+    <button id="back-to-top" aria-label="กลับขึ้นด้านบน">&#8679;</button>
+
+    <script>
+        // Back to top
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            // Close all product-details
+            document.querySelectorAll('.product-details.show').forEach(details => {
+                details.classList.remove('show');
+            });
+            document.querySelectorAll('.product-row-content .btn').forEach(btn => {
+                btn.textContent = 'ดูเพิ่มเติม';
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 
 </body>
