@@ -63,6 +63,17 @@
    BASE
    ============================================================ */
 
+:root {
+    --color-primary:       #011578;
+    --color-primary-hover: #192e9c;
+    --color-navy:          rgb(0, 50, 103);
+    --color-orange:        #f56b00;
+    --color-light-blue:    rgb(156, 225, 254);
+    --color-check:         #4caf50;
+    --color-success:       #22c55e;
+    --color-danger:        #ef4444;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'SST', 'Sukhumvit Set', 'Segoe UI', sans-serif;
@@ -84,7 +95,7 @@ body {
    ============================================================ */
 
 .hero {
-    height: 400px;
+    height: 415px;
     position: relative;
     overflow: hidden;
 }
@@ -153,13 +164,18 @@ body {
 .hero-text p {
     font-size: 54px;
     margin-top: 60px;
-    font-weight: 300;
+    font-weight: 500;
+}
+
+.hero-text p span {
+    color: var(--color-primary);
 }
 
 .slide:nth-child(2) .hero-text p {
     font-size: 32px;
     margin-top: 30px;
     line-height: 1.25;
+    font-weight: 500;
 }
 
 /* Navigation Arrows */
@@ -310,8 +326,6 @@ body {
 
     .product-nav a img {
         height: 50px;
-        padding-top: 6px;
-        padding-bottom: 6px;
         padding-top: 12px;
         padding-bottom: 12px;
     }
@@ -339,7 +353,7 @@ body {
     font-weight: 800;
     color: #fff;
     display: inline-block;
-    background: #f56b00;
+    background: var(--color-orange);
     padding: 20px 80px;
     border-radius: 20px;
 }
@@ -398,6 +412,7 @@ body {
     font-weight: 500;
     text-align: center;
 }
+
 
 /* Mobile Gallery — hidden on desktop */
 .coverage-mobile-gallery {
@@ -469,7 +484,7 @@ body {
     position: absolute;
     left: 12px;
     top: 15px;
-    color: #4caf50;
+    color: var(--color-check);
     font-weight: bold;
     font-size: 20px;
 }
@@ -574,9 +589,9 @@ body {
 .product-details h3 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: rgba(0, 50, 103, 1);
+    color: var(--color-navy);
     font-weight: 700;
-    border-bottom: 3px solid rgba(0, 50, 103, 1);
+    border-bottom: 3px solid var(--color-navy);
     padding-bottom: 10px;
 }
 
@@ -600,7 +615,7 @@ body {
 }
 
 .product-details thead {
-    background: rgba(0, 50, 103, 1);
+    background: var(--color-navy);
     color: #fff;
 }
 
@@ -653,7 +668,7 @@ body {
     content: "✓";
     position: absolute;
     left: 12px;
-    color: #4caf50;
+    color: var(--color-check);
     font-weight: bold;
     font-size: 18px;
 }
@@ -676,7 +691,7 @@ body {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #4caf50;
+    color: var(--color-check);
     font-weight: bold;
     font-size: 18px;
 }
@@ -687,7 +702,7 @@ body {
    ============================================================ */
 
 .btn {
-    background: #011578;
+    background: var(--color-primary);
     color: #fff;
     padding: 14px 36px;
     border-radius: 30px;
@@ -695,15 +710,21 @@ body {
     font-weight: 600;
     font-size: 36px !important;
     display: inline-block;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
-    background: #192e9c;
+    background: var(--color-primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.product .btn.btn-small {
+    font-size: 31px !important;
+    transform: scale(1);
+    transform-origin: center;
 }
 
 
@@ -794,15 +815,15 @@ body {
 }
 
 .centers th:not(:last-child) {
-    border-right: 3px solid rgba(0, 50, 103, 1);
+    border-right: 3px solid var(--color-navy);
 }
 
 .centers td:not(:last-child) {
-    border-right: 3px solid rgba(0, 50, 103, 1);
+    border-right: 3px solid var(--color-navy);
 }
 
 .centers th {
-    background: rgba(0, 50, 103, 1);
+    background: var(--color-navy);
     color: #fff;
     font-weight: 500;
     font-size: 24px;
@@ -831,7 +852,7 @@ body {
 }
 
 .centers tbody tr:nth-child(even) {
-    background: rgba(156, 225, 254, 1);
+    background: var(--color-light-blue);
 }
 
 
@@ -862,7 +883,7 @@ body {
 }
 
 .summary-item {
-    background: rgba(0, 50, 103, 1);
+    background: var(--color-navy);
     color: #fff;
     padding: 20px 16px;
     flex: 1;
@@ -878,14 +899,6 @@ body {
 
 .summary-item:last-child {
     border-right: none;
-}
-
-.summary-text {
-    display: none;
-}
-
-.summary-value {
-    display: none;
 }
 
 .summary-item .label {
@@ -1024,7 +1037,7 @@ body {
     content: "•";
     position: absolute;
     left: 0;
-    color: rgba(0, 50, 103, 1);
+    color: var(--color-navy);
     font-weight: bold;
     font-size: 18px;
 }
@@ -1068,7 +1081,7 @@ body {
     text-align: center;
     display: block;
     max-width: 400px;
-    background: #f56b00;
+    background: var(--color-orange);
     color: #fff;
     padding: 20px 40px;
     border-radius: 20px;
@@ -1086,7 +1099,7 @@ body {
     text-align: center;
     border-bottom: none !important;
     color: #fff !important;
-    background: #f56b00;
+    background: var(--color-orange);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1156,7 +1169,7 @@ body {
 
 .compare-table td {
     font-weight: 600;
-    background: rgba(0, 50, 103, 1);
+    background: var(--color-navy);
     color: #fff;
     vertical-align: middle;
 }
@@ -1182,7 +1195,7 @@ body {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #22c55e;
+    background: var(--color-success);
     color: #fff;
     font-size: 11px;
     flex-shrink: 0;
@@ -1196,7 +1209,7 @@ body {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #ef4444;
+    background: var(--color-danger);
     color: #fff;
     font-size: 11px;
     flex-shrink: 0;
@@ -1296,6 +1309,10 @@ body {
         padding: 16px 48px;
     }
 
+    .product .btn.btn-small {
+        font-size: 28px !important;
+    }
+
     .coverage h2 {
         padding: 16px 48px;
     }
@@ -1313,6 +1330,11 @@ body {
         height: 350px;
     }
 
+    .hero-prev,
+    .hero-next {
+        display: none;
+    }
+
     .slide {
         padding-left: 30px;
         padding-right: 30px;
@@ -1324,6 +1346,8 @@ body {
 
     .hero-text p {
         font-size: 16px;
+        margin-top: 30px;
+        font-weight: 500;
     }
 
     .slide:nth-child(2) .hero-text p {
@@ -1461,6 +1485,10 @@ body {
         padding: 12px 28px;
     }
 
+    .product .btn.btn-small {
+        font-size: 24px !important;
+    }
+
     .product-row-content {
         grid-column: 1;
         width: 100%;
@@ -1503,7 +1531,7 @@ body {
     }
 
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .feature {
@@ -1713,6 +1741,8 @@ body {
 
     .hero-text p {
         font-size: 14px;
+        margin-top: 22px;
+        font-weight: 500;
     }
 
     .slide:nth-child(2) .hero-text p {
@@ -1743,6 +1773,10 @@ body {
         font-size: 20px !important;
         padding: 10px 24px;
         max-width: 250px;
+    }
+
+    .product .btn.btn-small {
+        font-size: 20px !important;
     }
 
     .btn {
@@ -1967,6 +2001,8 @@ body {
 
     .hero-text p {
         font-size: 12px;
+        margin-top: 16px;
+        font-weight: 500;
     }
 
     .slide:nth-child(2) .hero-text p {

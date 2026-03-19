@@ -18,7 +18,7 @@
                 <img src="images/banner_01.jpg" alt="Sony Camera" class="hero-bg">
                 <div class="hero-text">
                     <h1>Sony Store</h1>
-                    <p>My Sony Care<br>Better Safe Than Sorry</p>
+                    <p>My Sony Care<br><span>Better Safe Than Sorry</span></p>
                 </div>
             </div>
             <div class="slide">
@@ -64,7 +64,7 @@
             </div>
             <div class="item">
                 <img src="images/protect-defect.jpg" alt="ชิ้นส่วนพร้อมในอุปกรณ์">
-                <p>ชิ้นส่วนพร้อมในอุปกรณ์</p>
+                <p>ชิ้นส่วนบกพร่องในอุปกรณ์</p>
             </div>
         </div>
 
@@ -187,10 +187,10 @@
             <!-- Terms Links -->
             <div class="conditions-links">
                 <div class="condition-item">
-                    <h4>ข้อกำหนดและเงื่อนไขกำรให้บริการมายโซนี่แคร์(My SonyCare)</h4>
+                    <a href="https://cdn.shopify.com/s/files/1/0016/4416/7203/files/Sony_Store_Care_Terms_and_Conditions_TH_final.pdf"><h4>ข้อกำหนดและเงื่อนไขกำรให้บริการมายโซนี่แคร์(My SonyCare)</h4></a>
                 </div>
                 <div class="condition-item">
-                    <h4>Terms and Conditions for My Sony Care(English Version)</h4>
+                    <a href="https://cdn.shopify.com/s/files/1/0016/4416/7203/files/1.1_Final_Sony_Care_Terms_and_Conditions_-_20241105_EN.pdf"><h4>Terms and Conditions for My Sony Care(English Version)</h4></a>
                 </div>
             </div>
 
@@ -359,10 +359,10 @@
             </div>
             <div class="conditions-links">
                 <div class="condition-item">
-                    <h4>ข้อกำหนดและเงื่อนไขกำรให้บริการมายโซนี่แคร์(My SonyCare)</h4>
+                    <a href="https://cdn.shopify.com/s/files/1/0016/4416/7203/files/Sony_Store_Care_Terms_and_Conditions_TH_final.pdf"><h4>ข้อกำหนดและเงื่อนไขกำรให้บริการมายโซนี่แคร์(My SonyCare)</h4></a>
                 </div>
                 <div class="condition-item">
-                    <h4>Terms and Conditions for My Sony Care(English Version)</h4>
+                    <a href="https://cdn.shopify.com/s/files/1/0016/4416/7203/files/1.1_Final_Sony_Care_Terms_and_Conditions_-_20241105_EN.pdf"><h4>Terms and Conditions for My Sony Care(English Version)</h4></a>
                 </div>
             </div>
         </div>
@@ -392,10 +392,10 @@
             </div>
             <div class="conditions-links">
                 <div class="condition-item">
-                    <h4>ข้อกำหนดและเงื่อนไขกำรให้บริการมายโซนี่แคร์(My SonyCare)</h4>
+                    <a href="https://cdn.shopify.com/s/files/1/0016/4416/7203/files/Sony_Store_Care_Terms_and_Conditions_TH_final.pdf"><h4>ข้อกำหนดและเงื่อนไขกำรให้บริการมายโซนี่แคร์(My SonyCare)</h4></a>
                 </div>
                 <div class="condition-item">
-                    <h4>Terms and Conditions for My Sony Care(English Version)</h4>
+                    <a href="https://cdn.shopify.com/s/files/1/0016/4416/7203/files/1.1_Final_Sony_Care_Terms_and_Conditions_-_20241105_EN.pdf"><h4>Terms and Conditions for My Sony Care(English Version)</h4></a>
                 </div>
             </div>
         </div>
@@ -580,6 +580,7 @@
             const details = button.closest('.product').querySelector('.product-details');
             const isOpen  = details.classList.toggle('show');
             button.textContent = isOpen ? 'ซ่อนรายละเอียด' : 'ดูเพิ่มเติม';
+            button.classList.toggle('btn-small', isOpen);
         }
 
         function toggleCaseStudy(button) {
@@ -598,7 +599,10 @@
             const btn     = section.querySelector('.product-row-content .btn');
             if (details && !details.classList.contains('show')) {
                 details.classList.add('show');
-                if (btn) btn.textContent = 'ซ่อนรายละเอียด';
+                if (btn) {
+                    btn.textContent = 'ซ่อนรายละเอียด';
+                    btn.classList.add('btn-small');
+                }
             }
 
             // Smooth scroll after a short delay to let the details expand
@@ -628,6 +632,7 @@
             });
             document.querySelectorAll('.product-row-content .btn').forEach(btn => {
                 btn.textContent = 'ดูเพิ่มเติม';
+                btn.classList.remove('btn-small');
             });
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
