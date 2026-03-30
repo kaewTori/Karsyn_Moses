@@ -148,36 +148,6 @@ body {
     z-index: 1;
 }
 
-.hero-text {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-align: left;
-}
-
-.hero-text h1 {
-    font-size: 32px;
-    margin: 0;
-    font-weight: 700;
-}
-
-.hero-text p {
-    font-size: 54px;
-    margin-top: 60px;
-    font-weight: 500;
-}
-
-.hero-text p span {
-    color: var(--color-primary);
-}
-
-.slide:nth-child(2) .hero-text p {
-    font-size: 32px;
-    margin-top: 30px;
-    line-height: 1.25;
-    font-weight: 500;
-}
-
 /* Navigation Arrows */
 .hero-prev,
 .hero-next {
@@ -568,17 +538,6 @@ body {
 .product-details.show {
     max-height: 10000px;
     opacity: 1;
-}
-
-.details-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.coverage-table,
-.package-table {
-    grid-column: span 1;
 }
 
 .benefits-list {
@@ -1246,29 +1205,6 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-.price-note {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 20px;
-}
-
-.price-note p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-    flex: 1;
-}
-
-.price-note p:first-child {
-    text-align: left;
-}
-
-.price-note p:last-child {
-    text-align: right;
-}
-
-
 /* ============================================================
    RESPONSIVE — ≤1024px
    ============================================================ */
@@ -1641,16 +1577,6 @@ body {
         -webkit-overflow-scrolling: touch;
     }
 
-    .price-note {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .price-note p {
-        text-align: left !important;
-        font-size: 12px;
-    }
-
     .price-table {
         font-size: 12px;
     }
@@ -1904,10 +1830,6 @@ body {
         font-size: 18px !important;
         padding: 14px 24px !important;
         margin: 40px auto 16px;
-    }
-
-    .price-note p {
-        font-size: 11px;
     }
 
     /* Compare Table */

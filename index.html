@@ -15,18 +15,16 @@
     <section class="hero">
         <div class="hero-slideshow">
             <div class="slide active">
-                <img src="images/banner_01.jpg" alt="Sony Camera" class="hero-bg">
-                <div class="hero-text">
-                    <h1>Sony Store</h1>
-                    <p>My Sony Care<br><span>Better Safe Than Sorry</span></p>
-                </div>
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/banner_01_mini.jpg">
+                    <img src="images/banner_01.jpg" alt="Sony Camera" class="hero-bg">
+                </picture>
             </div>
             <div class="slide">
-                <img src="images/banner_02.jpg" alt="Sony Headphone &amp; Phone" class="hero-bg">
-                <div class="hero-text">
-                    <h1>Sony Store</h1>
-                    <p>ซื้อการขยายเวลาการรับประกัน<br>My Sony care ขยายประกัน<br>คุ้มครองสูงสุด 27 เดือน</p>
-                </div>
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/banner_02_mini.jpg">
+                    <img src="images/banner_02.jpg" alt="Sony Headphone &amp; Phone" class="hero-bg">
+                </picture>
             </div>
         </div>
         <button class="hero-prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -534,12 +532,6 @@
                 center(true);
             };
 
-            window.covGoTo = (idx) => {
-                pos = idx + 1;
-                markActive();
-                center(true);
-            };
-
             markActive();
             center(false);
             window.addEventListener('resize', () => center(false));
@@ -581,12 +573,6 @@
             const isOpen  = details.classList.toggle('show');
             button.textContent = isOpen ? 'ซ่อนรายละเอียด' : 'ดูเพิ่มเติม';
             button.classList.toggle('btn-small', isOpen);
-        }
-
-        function toggleCaseStudy(button) {
-            const content = button.nextElementSibling;
-            const isOpen  = content.classList.toggle('show');
-            button.textContent = isOpen ? 'ซ่อน Case Study' : 'Case Study';
         }
 
         function navTo(e, sectionId) {
